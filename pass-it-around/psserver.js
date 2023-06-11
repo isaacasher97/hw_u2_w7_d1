@@ -6,7 +6,7 @@ const app = express()
 
 //Routes
 app.get('/', (req, res) => {
-    res.send(`<h1>99 Bottles of beer on the wall</h1><a href="/98">Take one down, pass it around</a>`);
+    res.send(`<h1>99 little bugs in the code, 99 little bugs</h1><a href="/98">Take one down, patch it around</a>`);
   });
   
   app.get('/:number_of_bottles', (req, res) => {
@@ -16,16 +16,16 @@ app.get('/', (req, res) => {
   
     if (numberOfBottles === 0) {
        // If there are no more bottles, display the appropriate message  
-      song += `<h1>0 bottles of beer on the wall.</h1>`;
+      song += `<h1>0 bugs in the code.</h1>`;
     } else {
       const nextBottles = numberOfBottles - 1;  // Calculate the number of bottles for the next verse
 
       // Add the current verse to the song lyrics and HTML code
-      song += `<h1>${numberOfBottles} Bottle${numberOfBottles !== 1 ? 's' : ''} of beer on the wall.</h1>`;
+      song += `<h1>${numberOfBottles} little bug${numberOfBottles !== 1 ? 's' : ''} in the code. ${numberOfBottles} little bug${numberOfBottles !== 1 ? 's' : ''}</h1>`;
   
       if (nextBottles > 0) {
         // If there are more bottles remaining, display the "Take one down, pass it around" link
-        song += `<a href="/${nextBottles}">Take one down, pass it around</a>`;
+        song += `<a href="/${nextBottles}">Take one down, patch it around</a>`;
       }
     }
   
